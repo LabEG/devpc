@@ -11,7 +11,7 @@ LABEL maintainer="labeg@mail.ru" \
 
 USER root
 
-# dotnet vscode monodevelop nodejs
+# dotnet vscode monodevelop nodejs git2
 RUN rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm \
         && \
         rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
@@ -20,7 +20,9 @@ RUN rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-pro
         rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" && \
         su -c 'curl https://download.mono-project.com/repo/centos7-vs.repo | tee /etc/yum.repos.d/mono-centos7-vs.repo' \
         && \
-        dnf install -y git code monodevelop chromium dotnet-sdk-2.2 nodejs gnome-terminal gnome-system-monitor \
+        yum install -y https://centos7.iuscommunity.org/ius-release.rpm \
+        && \
+        dnf install -y git2u git2u-gui code monodevelop firefox dotnet-sdk-2.2 nodejs gnome-terminal gnome-system-monitor \
         && \
         curl -sL https://rpm.nodesource.com/setup_11.x | bash - \
         && \
