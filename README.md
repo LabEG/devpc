@@ -9,7 +9,7 @@ Includes packages:
 - LXQt,
 - TigerVNC-Server,
 - Dotnet,
-- VS Code,
+- VS Code (with Typescript, Sharp, Docthis extensions),
 - NodeJS (with global TypeScript, Gulp, Npm-check-updates),
 - Monodevelop
 - Git,
