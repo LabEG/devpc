@@ -22,9 +22,9 @@ RUN rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-pro
         && \
         yum install -y https://centos7.iuscommunity.org/ius-release.rpm \
         && \
-        dnf install -y git2u git2u-gui code monodevelop firefox dotnet-sdk-2.2 nodejs gnome-terminal gnome-system-monitor \
-        && \
         curl -sL https://rpm.nodesource.com/setup_11.x | bash - \
+        && \
+        dnf install -y git2u git2u-gui code monodevelop firefox dotnet-sdk-2.2 nodejs gnome-terminal gnome-system-monitor \
         && \
         npm install -g gulp typescript npm-check-updates \
         && \
