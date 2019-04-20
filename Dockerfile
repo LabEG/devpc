@@ -28,6 +28,10 @@ RUN rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-pro
         && \
         npm install -g gulp typescript npm-check-updates \
         && \
-        sudo -H -u headless bash -c 'code --install-extension ms-vscode.vscode-typescript-tslint-plugin; code --install-extension ms-vscode.csharp; code --install-extension joelday.docthis;'
+        chown headless:headless -R ${HOME}
 
 USER headless
+
+RUN code --install-extension ms-vscode.vscode-typescript-tslint-plugin && \
+    code --install-extension ms-vscode.csharp && \
+    code --install-extension joelday.docthis
