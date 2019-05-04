@@ -34,4 +34,6 @@ USER headless
 
 RUN code --install-extension ms-vscode.vscode-typescript-tslint-plugin && \
     code --install-extension ms-vscode.csharp && \
-    code --install-extension joelday.docthis
+    code --install-extension joelday.docthis && \
+    code --install-extension shinnn.stylelint && \
+    code --install-extension mrmlnc.vscode-remark
