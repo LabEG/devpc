@@ -24,7 +24,7 @@ RUN rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-pro
         && \
         curl -sL https://rpm.nodesource.com/setup_11.x | bash - \
         && \
-        dnf install -y git2u git2u-gui code monodevelop firefox dotnet-sdk-2.2 nodejs gnome-terminal gnome-system-monitor \
+        dnf install -y geany git2u git2u-gui code monodevelop firefox dotnet-sdk-2.2 nodejs gnome-terminal gnome-system-monitor \
         && \
         npm install -g gulp typescript npm-check-updates \
         && \
