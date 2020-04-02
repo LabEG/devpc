@@ -35,7 +35,6 @@ USER headless
 RUN code --install-extension ms-vscode.vscode-typescript-tslint-plugin && \
     code --install-extension dbaeumer.vscode-eslint && \
     code --install-extension mrmlnc.vscode-scss && \
-    code --install-extension shinnn.stylelint && \
     code --install-extension visualstudioexptteam.vscodeintellicode && \
     code --install-extension ms-dotnettools.csharp && \
     code --install-extension joelday.docthis && \
