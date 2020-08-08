@@ -37,6 +37,5 @@ RUN code --install-extension ms-vscode.vscode-typescript-tslint-plugin && \
     code --install-extension mrmlnc.vscode-scss && \
     code --install-extension visualstudioexptteam.vscodeintellicode && \
     code --install-extension ms-dotnettools.csharp && \
-    code --install-extension joelday.docthis && \
     code --install-extension mrmlnc.vscode-remark && \
     code --install-extension eamodio.gitlens
