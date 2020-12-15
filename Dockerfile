@@ -11,12 +11,14 @@ LABEL maintainer="labeg@mail.ru" \
 
 USER root
 
-# dotnet vscode monodevelop nodejs git2
-RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
+# dotnet vscode monodevelop nodejs
+RUN wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/config/fedora/33/prod.repo \
+        && \
+        rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
         sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' \
         && \
-        rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" && \
-        su -c 'curl https://download.mono-project.com/repo/centos7-vs.repo | tee /etc/yum.repos.d/mono-centos7-vs.repo' \
+        rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" && \
+        su -c 'curl https://download.mono-project.com/repo/centos8-vs.repo | tee /etc/yum.repos.d/mono-centos8-vs.repo' \
         && \
         curl -sL https://rpm.nodesource.com/setup_15.x | bash - \
         && \
@@ -33,5 +35,6 @@ RUN code --install-extension ms-vscode.vscode-typescript-tslint-plugin && \
     code --install-extension mrmlnc.vscode-scss && \
     code --install-extension visualstudioexptteam.vscodeintellicode && \
     code --install-extension ms-dotnettools.csharp && \
+    code --install-extension joelday.docthis && \
     code --install-extension mrmlnc.vscode-remark && \
     code --install-extension eamodio.gitlens
