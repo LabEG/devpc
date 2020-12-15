@@ -17,12 +17,9 @@ RUN wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/
         rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
         sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' \
         && \
-        rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" && \
-        su -c 'curl https://download.mono-project.com/repo/centos8-vs.repo | tee /etc/yum.repos.d/mono-centos8-vs.repo' \
-        && \
         curl -sL https://rpm.nodesource.com/setup_15.x | bash - \
         && \
-        dnf install -y geany git git-gui code monodevelop firefox dotnet-sdk-5.0 nodejs gnome-system-monitor \
+        dnf install -y geany git git-gui code firefox dotnet-sdk-5.0 nodejs gnome-system-monitor \
         && \
         npm install -g typescript npm-check-updates \
         && \

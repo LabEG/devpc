@@ -11,7 +11,6 @@ Includes packages:
 - Dotnet,
 - VS Code (with Typescript and C# extensions),
 - NodeJS (with global TypeScript, Npm-check-updates),
-- Monodevelop
 - Git,
 - Firefox.
 
