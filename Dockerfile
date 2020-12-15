@@ -24,7 +24,7 @@ RUN wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/
         && \
         dnf install -y geany git git-gui code monodevelop firefox dotnet-sdk-5.0 nodejs gnome-system-monitor \
         && \
-        npm install -g gulp typescript npm-check-updates \
+        npm install -g typescript npm-check-updates \
         && \
         chown headless:headless -R ${HOME}
 
@@ -35,6 +35,5 @@ RUN code --install-extension ms-vscode.vscode-typescript-tslint-plugin && \
     code --install-extension mrmlnc.vscode-scss && \
     code --install-extension visualstudioexptteam.vscodeintellicode && \
     code --install-extension ms-dotnettools.csharp && \
-    code --install-extension joelday.docthis && \
     code --install-extension mrmlnc.vscode-remark && \
     code --install-extension eamodio.gitlens

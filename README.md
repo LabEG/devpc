@@ -4,13 +4,13 @@ This repository contains a Docker image with minimal Desktop installation and so
 
 Includes packages:
 
-- CentOS minimal,
+- Fedora minimal,
 - OpenBox,
 - LXQt,
 - TigerVNC-Server,
 - Dotnet,
-- VS Code (with Typescript, Sharp, Docthis extensions),
-- NodeJS (with global TypeScript, Gulp, Npm-check-updates),
+- VS Code (with Typescript and C# extensions),
+- NodeJS (with global TypeScript, Npm-check-updates),
 - Monodevelop
 - Git,
 - Firefox.
@@ -25,13 +25,13 @@ All other software you can install yourself.
 ### Try
 If you just want to try the features:
 ```sh
-docker run -it --rm -e password='YOUR_VNC_PASSWORD' -p5901:5901 labeg/devpc
+docker run -it --rm -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/devpc
 ```
 
 ### Use
 If you want to use the container regularly:
 ```sh
-docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p5901:5901 labeg/devpc
+docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/devpc
 ```
 
 ### Parameters
