@@ -11,7 +11,7 @@ LABEL maintainer="labeg@mail.ru" \
 
 USER root
 
-# dotnet vscode monodevelop nodejs
+# dotnet vscode nodejs
 RUN wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/config/fedora/33/prod.repo \
         && \
         rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
