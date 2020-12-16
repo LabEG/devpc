@@ -27,6 +27,9 @@ RUN wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/
 
 USER headless
 
+# add vscode icon to quicklaunch
+RUN echo 'apps\3\desktop=/usr/share/applications/code.desktop' >> ${HOME}/.config/lxqt/panel.conf
+
 RUN code --install-extension ms-vscode.vscode-typescript-tslint-plugin && \
     code --install-extension dbaeumer.vscode-eslint && \
     code --install-extension mrmlnc.vscode-scss && \
