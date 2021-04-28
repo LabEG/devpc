@@ -1,7 +1,6 @@
 
 FROM labeg/centos-lxqt-vnc:latest
 
-
 LABEL maintainer="labeg@mail.ru" \
       io.k8s.description="Container with tools for development C# and Typescript applications" \
       io.k8s.display-name="Container with C# ant Typescript" \
@@ -17,7 +16,7 @@ RUN wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/
         rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
         sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' \
         && \
-        dnf install -y geany git git-gui code firefox dotnet-sdk-5.0 nodejs gnome-system-monitor \
+        dnf install -y geany git code falkon dotnet-sdk-5.0 nodejs gnome-system-monitor \
         && \
         npm install -g typescript npm-check-updates \
         && \
