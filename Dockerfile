@@ -23,6 +23,8 @@ RUN wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com/
         chown headless:headless -R ${HOME}
 
 # add vscode icon to quicklaunch
+RUN ls -lah /usr/share
+RUN ls -lah /usr/share/applications
 RUN echo 'apps\3\desktop=/usr/share/applications/code.desktop' >> ${HOME}/.config/lxqt/panel.conf
 RUN sed -i 's/code --unity/code --no-sandbox --unity/' /usr/share/applications/code.desktop
 
