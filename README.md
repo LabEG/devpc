@@ -12,7 +12,7 @@ Includes packages:
 - VS Code (with Typescript and C# extensions),
 - NodeJS (with global TypeScript, Npm-check-updates),
 - Git,
-- Firefox.
+- Falcon Browser.
 
 The Image is automatically rebuilt every day, at midnight by GMT.
 
