@@ -15,9 +15,9 @@ RUN sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.mi
         && \
         dnf install -y geany git code falkon dotnet-sdk-6.0 nodejs gnome-system-monitor \
         && \
-        dotnet --version && node -v \
-        && \
         npm install -g typescript npm-check-updates \
+        && \
+        dotnet --version && node -v && tsc -v \
         && \
         chown headless:headless -R ${HOME}
 
