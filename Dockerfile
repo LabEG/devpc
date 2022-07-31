@@ -19,7 +19,11 @@ RUN sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.mi
         && \
         dotnet --version && node -v && tsc -v \
         && \
-        chown headless:headless -R ${HOME}
+        chown headless:headless -R ${HOME} \
+        && \
+        dnf clean all \
+        && \
+        rm -rf /var/cache/dnf/*
 
 # add vscode icon to quicklaunch
 RUN echo 'apps\3\desktop=/usr/share/applications/code.desktop' >> ${HOME}/.config/lxqt/panel.conf
