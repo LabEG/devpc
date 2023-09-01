@@ -37,4 +37,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: labeg/devpc:latest, labeg/devpc:38, labeg/devpc:38.1
+          tags: labeg/devpc:latest, labeg/devpc:38, labeg/devpc:38.2
