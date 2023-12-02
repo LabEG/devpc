@@ -1,5 +1,5 @@
 
-FROM labeg/centos-lxqt-vnc:38
+FROM labeg/centos-lxqt-vnc:39
 
 LABEL maintainer="labeg@mail.ru" \
       io.k8s.description="Container with tools for development C# and Typescript applications" \
