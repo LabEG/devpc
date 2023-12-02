@@ -33,4 +33,4 @@ USER headless
 
 RUN code --install-extension dbaeumer.vscode-eslint && \
     code --install-extension visualstudioexptteam.vscodeintellicode && \
-    code --install-extension ms-dotnettools.csharp
+    code --install-extension ms-dotnettools.csdevkit
