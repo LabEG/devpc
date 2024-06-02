@@ -26,7 +26,7 @@ The source code is located on the GitHub repository here:
 
 [https://github.com/LabEG/devpc](https://github.com/LabEG/devpc)
 
-### Try
+## Try
 
 If you just want to try the features:
 
@@ -34,7 +34,7 @@ If you just want to try the features:
 docker run -it --rm -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/devpc
 ```
 
-### Use
+## Use
 
 If you want to use the container regularly:
 
@@ -42,7 +42,7 @@ If you want to use the container regularly:
 docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/devpc
 ```
 
-### Parameters
+## Parameters
 
 - `-e password='YOUR_VNC_PASSWORD'` - required, password for VNC connections.
 - `-e user_password='YOUR_USER_PASSWORD'` - optional, password for user *headless*. By default, will be used *password* variable.
@@ -50,12 +50,12 @@ docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labe
 - `-e resolution='1920x1080'` - optional, resolution for virtual screen.
 - `--shm-size='64m'` - optional, extend if firefox browser is crashing.
 
-### FAQ
+## FAQ
 
 - For change LXQT Theme open Menu > Preferences > Appearance > LXQt Theme and select nice to you theme, example Kde-Plasma.
 - For change OpenBox theme open Menu > Preferences > LXQt settings > Opebox Settings and select nice to you theme, example Clearlooks.
 
-### Build
+## Build
 
 ```sh
 docker build -t labeg/devpc .
