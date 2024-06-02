@@ -20,20 +20,30 @@ All other software you can install yourself.
 
 ![Docker LXQt Desktop access via TightVNC Client](https://raw.githubusercontent.com/LabEG/devpc/master/.pics/vnc_container_view.png)
 
+## GitHub
+
+The source code is located on the GitHub repository here:
+
+[https://github.com/LabEG/devpc](https://github.com/LabEG/devpc)
 
 ### Try
+
 If you just want to try the features:
+
 ```sh
 docker run -it --rm -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/devpc
 ```
 
 ### Use
+
 If you want to use the container regularly:
+
 ```sh
 docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/devpc
 ```
 
 ### Parameters
+
 - `-e password='YOUR_VNC_PASSWORD'` - required, password for VNC connections.
 - `-e user_password='YOUR_USER_PASSWORD'` - optional, password for user *headless*. By default, will be used *password* variable.
 - `-e root_password='YOUR_ROOT_PASSWORD'` - optional, password for *root* user. By default, will be used *user_password* variable, if it is not specified then *password* variable.
@@ -41,10 +51,9 @@ docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labe
 - `--shm-size='64m'` - optional, extend if firefox browser is crashing.
 
 ### FAQ
+
 - For change LXQT Theme open Menu > Preferences > Appearance > LXQt Theme and select nice to you theme, example Kde-Plasma.
 - For change OpenBox theme open Menu > Preferences > LXQt settings > Opebox Settings and select nice to you theme, example Clearlooks.
-
-
 
 ### Build
 
