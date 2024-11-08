@@ -31,6 +31,6 @@ RUN sed -i 's/code --unity/code --no-sandbox --unity/' /usr/share/applications/c
 
 USER headless
 
-RUN code --install-extension dbaeumer.vscode-eslint && \
-    code --install-extension visualstudioexptteam.vscodeintellicode && \
-    code --install-extension ms-dotnettools.csdevkit
+# RUN code --install-extension dbaeumer.vscode-eslint && \
+#     code --install-extension visualstudioexptteam.vscodeintellicode && \
+#     code --install-extension ms-dotnettools.csdevkit
