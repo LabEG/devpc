@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: labeg/devpc:latest, labeg/devpc:42, labeg/devpc:42.0
+          tags: labeg/devpc:latest, labeg/devpc:43, labeg/devpc:43.0
           platforms: linux/amd64
           cache-from: type=registry,ref=labeg/devpc:latest
           cache-to: type=inline

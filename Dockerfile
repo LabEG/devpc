@@ -1,5 +1,5 @@
 
-FROM labeg/centos-lxqt-vnc:42
+FROM labeg/centos-lxqt-vnc:43
 
 ENV DONT_PROMPT_WSL_INSTALL=true
 
