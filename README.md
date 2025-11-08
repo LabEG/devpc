@@ -1,62 +1,92 @@
-# Docker images with software for develop C# and Typescript applications
+# DevPC - Containerized Development Environment
 
-This repository contains a Docker image with minimal Desktop installation and software for develop C# and Typescript applications.
+A fully-featured Docker image providing a complete desktop development environment for C# and TypeScript applications. This container includes a minimal desktop interface accessible via VNC, pre-configured with essential development tools.
 
-Includes packages:
+## Features
 
-- Fedora minimal,
-- OpenBox,
-- LXQt,
-- TigerVNC-Server,
-- Dotnet,
-- VS Code (with Typescript and C# extensions),
-- NodeJS (with global TypeScript, Npm-check-updates),
-- Git,
-- Falcon Browser.
+### Included Software
 
-The Image is automatically rebuilt every day, at midnight by GMT.
+- **Operating System**: Fedora Minimal
+- **Desktop Environment**: LXQt with OpenBox window manager
+- **Remote Access**: TigerVNC Server
+- **Development Tools**:
+  - .NET SDK
+  - Visual Studio Code (with C# and TypeScript extensions)
+  - Node.js with TypeScript and npm-check-updates
+  - Git version control
+- **Web Browser**: Falcon Browser
 
-All other software you can install yourself.
+### Automatic Updates
 
-![Docker LXQt Desktop access via TightVNC Client](https://raw.githubusercontent.com/LabEG/devpc/master/.pics/vnc_container_view.png)
+The image is automatically rebuilt daily at midnight GMT to ensure the latest security patches and software updates.
 
-## GitHub
+> **Note**: You can install additional software as needed within the container.
 
-The source code is located on the GitHub repository here:
+![Docker LXQt Desktop via VNC Client](https://raw.githubusercontent.com/LabEG/devpc/master/.pics/vnc_container_view.png)
 
-[https://github.com/LabEG/devpc](https://github.com/LabEG/devpc)
+## Quick Start
 
-## Try
+### Evaluation Mode
 
-If you just want to try the features:
+To quickly test the environment without persistence:
 
-```sh
+```bash
 docker run -it --rm -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/devpc
 ```
 
-## Use
+### Production Mode
 
-If you want to use the container regularly:
+For regular use with automatic restart:
 
-```sh
+```bash
 docker run -d --restart always -e password='YOUR_VNC_PASSWORD' -p 5901:5901 labeg/devpc
 ```
 
-## Parameters
+After starting the container, connect using any VNC client at `localhost:5901` with your specified password.
 
-- `-e password='YOUR_VNC_PASSWORD'` - required, password for VNC connections.
-- `-e user_password='YOUR_USER_PASSWORD'` - optional, password for user *headless*. By default, will be used *password* variable.
-- `-e root_password='YOUR_ROOT_PASSWORD'` - optional, password for *root* user. By default, will be used *user_password* variable, if it is not specified then *password* variable.
-- `-e resolution='1920x1080'` - optional, resolution for virtual screen.
-- `--shm-size='64m'` - optional, extend if firefox browser is crashing.
+## Configuration
 
-## FAQ
+### Environment Variables
 
-- For change LXQT Theme open Menu > Preferences > Appearance > LXQt Theme and select nice to you theme, example Kde-Plasma.
-- For change OpenBox theme open Menu > Preferences > LXQt settings > Opebox Settings and select nice to you theme, example Clearlooks.
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `password` | **Yes** | - | VNC connection password |
+| `user_password` | No | `password` | Password for the `headless` user |
+| `root_password` | No | `user_password` | Password for the `root` user |
+| `resolution` | No | `1280x1024` | Virtual screen resolution (e.g., `1920x1080`) |
 
-## Build
+### Docker Options
 
-```sh
+| Option | Purpose |
+|--------|---------|
+| `--shm-size='64m'` | Increase shared memory size if browsers crash |
+| `-p 5901:5901` | Expose VNC port |
+| `--restart always` | Auto-restart container on failure |
+
+## Customization
+
+### Changing the LXQt Theme
+
+1. Open Menu → Preferences → Appearance → LXQt Theme
+2. Select your preferred theme (e.g., Kde-Plasma)
+
+### Changing the OpenBox Theme
+
+1. Open Menu → Preferences → LXQt Settings → OpenBox Settings
+2. Select your preferred theme (e.g., Clearlooks)
+
+## Building from Source
+
+To build the image locally:
+
+```bash
 docker build -t labeg/devpc .
 ```
+
+## Repository
+
+Source code: [https://github.com/LabEG/devpc](https://github.com/LabEG/devpc)
+
+## License
+
+See [LICENSE](LICENSE) file for details.
