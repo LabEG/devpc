@@ -29,7 +29,7 @@ RUN dnf install -y geany git code falkon dotnet-sdk-9.0 nodejs \
 
 # add vscode icon to quicklaunch
 RUN echo 'apps\3\desktop=/usr/share/applications/code.desktop' >> ${HOME}/.config/lxqt/panel.conf
-RUN sed -i 's/code --new-window/code --no-sandbox --new-window/' /usr/share/applications/code.desktop
+RUN sed -i 's|Exec=/usr/share/code/code|Exec=/usr/share/code/code --no-sandbox|g' /usr/share/applications/code.desktop
 
 USER headless
 
