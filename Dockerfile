@@ -1,5 +1,5 @@
 
-FROM labeg/centos-lxqt-vnc:43
+FROM labeg/centos-lxqt-vnc:44
 
 ENV DONT_PROMPT_WSL_INSTALL=true
 
@@ -15,7 +15,7 @@ USER root
 # dotnet vscode nodejs
 RUN sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
-RUN dnf install -y geany git code falkon dotnet-sdk-9.0 nodejs \
+RUN dnf install -y geany git code falkon dotnet-sdk-10.0 nodejs \
       && \
       npm install -g typescript npm-check-updates \
       && \
