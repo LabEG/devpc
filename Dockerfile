@@ -34,5 +34,4 @@ RUN sed -i 's|/usr/share/code/code|/usr/share/code/code --no-sandbox|g' /usr/sha
 USER headless
 
 RUN code --install-extension dbaeumer.vscode-eslint && \
-    code --install-extension visualstudioexptteam.vscodeintellicode && \
     code --install-extension ms-dotnettools.csdevkit
