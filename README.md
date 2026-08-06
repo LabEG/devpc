@@ -18,7 +18,7 @@ A fully-featured Docker image providing a complete desktop development environme
 
 ### Automatic Updates
 
-The image is automatically rebuilt daily at midnight GMT to ensure the latest security patches and software updates.
+The image is automatically rebuilt every Saturday at 5:00 AM UTC to ensure the latest security patches and software updates.
 
 > **Note**: You can install additional software as needed within the container.
 
